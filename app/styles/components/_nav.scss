@@ -1,0 +1,15 @@
+.top-bar, .top-bar ul {
+  background-color: $nav-background;
+}
+
+.top-bar {
+  .menu-text {
+    color: $nav-text-color;
+  }
+  .menu > .menu-text > a {
+    display: inline;
+    padding: 0;
+  }
+}
+// .top-bar .menu-text {} <-- This is the same as the nesting css classes as shown above
+// Using nesting, you can nest more than one css class under the top leveel css class
