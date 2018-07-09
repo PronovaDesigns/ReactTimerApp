@@ -5,7 +5,7 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     singleRun: true,
     frameworks: ['mocha'],
-    // A globbing pattern is using the ** as wildcards -- ** is for any directory name * is any for file name
+    // A globbing pattern searches project using the "*" symbol as wildcards -- ** is for any directory name * is any for file name
     files: ['app/tests/**/*.test.jsx'],
     // Preprocessors specify the things we want to do with our test files
     preprocessors: {

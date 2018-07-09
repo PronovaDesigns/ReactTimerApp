@@ -1,4 +1,3 @@
-// This file mimics the manual command line processing to allow for scalability
 var webpack = require('webpack');
 
 module.exports = {
@@ -35,6 +34,8 @@ module.exports = {
     alias: {
       Main: 'app/components/Main.jsx',
       Nav: 'app/components/Nav.jsx',
+      Timer: 'app/components/Timer.jsx',
+      Countdown: 'app/components/Countdown.jsx',
       applicationStyles: 'app/styles/app.scss'
     },
 

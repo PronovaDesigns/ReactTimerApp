@@ -1,13 +1,13 @@
 {
-  "name": "boilerplate",
+  "name": "react-timer-app",
   "version": "1.0.0",
-  "description": "Simple react app",
+  "description": "A Simple React Timer App",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
     "start": "node server.js"
   },
-  "author": "Andrew Mead",
+  "author": "Christopher Migliorini",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.9.1",
