@@ -13,6 +13,7 @@ describe('Clock', () => {
 
   describe('render', () => {
     it('should render clock to output', () => {
+      // This test renders the Clock component in a test environment and uses jQuery to select the DOM render component, which then has it's clock-test text selected
       var clock = TestUtils.renderIntoDocument(<Clock totalSeconds={62}/>);
       var $el = $(ReactDOM.findDOMNode(clock));
       var actualText = $el.find('.clock-text').text();
@@ -32,6 +33,7 @@ describe('Clock', () => {
       });
 
     it('should format seconds when min/sec are less than 10', () => {
+      // TestUtils.renderIntoDocument renders a component for the sake of testing its functionality.
       var clock = TestUtils.renderIntoDocument(<Clock />);
       var seconds = 61;
       var expected = '01:01';
