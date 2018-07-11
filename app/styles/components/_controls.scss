@@ -1,0 +1,13 @@
+.controls {
+  display: flex;
+  justify-content: center;
+
+  .button {
+    padding: .75rem 3rem;
+  }
+
+  // This code selects the first type of element that appears on the DOM
+  .button:first-child {
+    margin-right: 1.5rem;
+  }
+}
