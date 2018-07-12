@@ -13,8 +13,29 @@ var Countdown = React.createClass({
     };
   },
 
+  // componentWillMount: function () {
+  //   // Fires just before component is rendered -- no access to refs or DOM
+  //   console.log("Component will mount!")
+  // },
+  //
+  // componentDidMount: function () {
+  //   // Fires right after everything gets rendered in the DOM -- access to refs and DOM
+  //   console.log("Component did mount!")
+  // },
+
+  componentWillUnmount: function () {
+    // Fires just right after a component is removed and just before another component's rendering in its place (if there is another)
+    clearInterval(this.timer);
+    this.timer = undefined;
+  },
+
+  componentWillUpdate: function (nextProps, nextState) {
+    // This fires just before a components props or state gets updated
+
+  },
+
   componentDidUpdate: function (prevProps, prevState) {
-    // This "Component Lifecycle Method" when a components props or state gets updated
+    // This "Component Lifecycle Method" fires just after a components props or state gets updated
     if (this.state.countdownStatus !== prevState.countdownStatus) {
       switch (this.state.countdownStatus) {
         case 'started':
@@ -24,6 +45,7 @@ var Countdown = React.createClass({
           this.setState({count: 0});
         case 'paused':
           clearInterval(this.timer)
+          // Stops the interval timer from counting down
           this.timer = undefined;
           break;
       }
@@ -36,6 +58,10 @@ var Countdown = React.createClass({
       this.setState({
         count: newCount >= 0 ? newCount : 0
       });
+
+      if (newCount === 0) {
+        this.setState({countdownStatus: 'stopped'});
+      }
     }, 1000);
   },
 
