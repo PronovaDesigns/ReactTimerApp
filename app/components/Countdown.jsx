@@ -29,10 +29,10 @@ var Countdown = React.createClass({
     this.timer = undefined;
   },
 
-  componentWillUpdate: function (nextProps, nextState) {
-    // This fires just before a components props or state gets updated
-
-  },
+  // componentWillUpdate: function (nextProps, nextState) {
+  //   // This fires just before a components props or state gets updated
+  //
+  // },
 
   componentDidUpdate: function (prevProps, prevState) {
     // This "Component Lifecycle Method" fires just after a components props or state gets updated
@@ -53,7 +53,7 @@ var Countdown = React.createClass({
   },
 
   startTimer: function () {
-    this.timer = setInterval(() => {
+    this.timer = setInterval( () => {
       var newCount = this.state.count - 1;
       this.setState({
         count: newCount >= 0 ? newCount : 0
@@ -78,6 +78,7 @@ var Countdown = React.createClass({
 
   render: function () {
     var {count, countdownStatus} = this.state;
+
     var renderControlArea = () => {
       if (countdownStatus != 'stopped') {
         return <Controls countdownStatus={countdownStatus} onStatusChange={this.handleStatusChange} />
