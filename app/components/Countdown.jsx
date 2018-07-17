@@ -3,8 +3,9 @@ var Clock = require('Clock');
 var CountdownForm = require('CountdownForm');
 var Controls = require('Controls');
 
+// This component will handle state, it is a main parent container component
+
 var Countdown = React.createClass({
-  // This component will handle state, it is a main parent container component
 
   getInitialState: function () {
     return {
@@ -24,14 +25,13 @@ var Countdown = React.createClass({
   // },
 
   componentWillUnmount: function () {
-    // Fires just right after a component is removed and just before another component's rendering in its place (if there is another)
+    // Fires right after a component is removed and just before another component's rendering in its place (if there is another)
     clearInterval(this.timer);
     this.timer = undefined;
   },
 
   // componentWillUpdate: function (nextProps, nextState) {
   //   // This fires just before a components props or state gets updated
-  //
   // },
 
   componentDidUpdate: function (prevProps, prevState) {

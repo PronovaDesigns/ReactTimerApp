@@ -6,7 +6,11 @@ module.exports = function (config) {
     singleRun: true,
     frameworks: ['mocha'],
     // A globbing pattern searches project using the "*" symbol as wildcards -- ** is for any directory name * is any for file name
-    files: ['app/tests/**/*.test.jsx'],
+    files: [
+      'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/foundation-sites/dist/foundation.min.js',
+      'app/tests/**/*.test.jsx'
+    ],
     // Preprocessors specify the things we want to do with our test files
     preprocessors: {
       'app/tests/**/*.test.jsx': ['webpack', 'sourcemap']

@@ -16,7 +16,7 @@ describe('CountdownForm', () => {
    it('should call onSetCountdown if valid seconds entered', () => {
      var spy = expect.createSpy();
      var countdownForm = TestUtils.renderIntoDocument(<CountdownForm onSetCountdown={spy} />);
-     // $el is the jQuery selector
+     // $el is the jQuery selector -- stands for element?
      var $el = $(ReactDOM.findDOMNode(countdownForm));
 
      countdownForm.refs.seconds.value = '109';
